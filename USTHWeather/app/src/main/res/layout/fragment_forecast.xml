@@ -10,193 +10,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ADD8E6"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ADD8E6"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="Mon"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="0.5"
-                android:contentDescription="cloudy"
-                android:src="@drawable/cloud" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1.5"
-                android:padding="5dp"
-                android:gravity="left"
-                android:text="Partly Cloudy\n24C-32C"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#ADD8E6"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="Tue"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="0.5"
-                android:contentDescription="cloudy"
-                android:src="@drawable/cloud" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1.5"
-                android:padding="5dp"
-                android:gravity="left"
-                android:text="Showers\n24C-30C"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#ADD8E6"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="Wed"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="0.5"
-                android:contentDescription="cloudy"
-                android:src="@drawable/cloud" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1.5"
-                android:padding="5dp"
-                android:gravity="left"
-                android:text="Rain\n22C-23C"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#ADD8E6"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="Thu"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="0.5"
-                android:contentDescription="cloudy"
-                android:src="@drawable/cloud" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1.5"
-                android:padding="5dp"
-                android:gravity="left"
-                android:text="Scattered Showers\n22C-27C"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#ADD8E6"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="Fri"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="0.5"
-                android:contentDescription="cloudy"
-                android:src="@drawable/cloud" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1.5"
-                android:padding="5dp"
-                android:gravity="left"
-                android:text="Mostly Cloudy\n22C-30C"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#ADD8E6"
             >
 
             <TextView
@@ -231,7 +49,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ADD8E6"
             >
 
             <TextView
@@ -266,7 +83,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ADD8E6"
             >
 
             <TextView
@@ -302,7 +118,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ADD8E6"
             >
 
             <TextView
@@ -337,7 +152,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ADD8E6"
             >
 
             <TextView
@@ -369,5 +183,6 @@
                 android:text="Scattered Thunderstorms\n23C-27C"
                 android:textSize="15sp" />
         </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
