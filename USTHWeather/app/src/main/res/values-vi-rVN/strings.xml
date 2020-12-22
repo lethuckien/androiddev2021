@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">USTH Thời Tiết</string>
+    <string name="cloudy">12C\nNhiều mây</string>
+    <string name="sat">Thứ bảy</string>
+    <string name="partly_cloudy">Mây nhẹ\n24C-32C</string>
+    <string name="sun">Chủ nhật</string>
+    <string name="thunderstorms">Bão\n25C-28C</string>
+    <string name="thu">Thứ năm</string>
+    <string name="tue">Thứ ba</string>
+    <string name="showers">Mưa rào\n24C-26C</string>
+    <string name="wed">Thứ tư</string>
+    <string name="scattered_thunderstorms">Bão rải rác\n23C-27C</string>
+</resources>

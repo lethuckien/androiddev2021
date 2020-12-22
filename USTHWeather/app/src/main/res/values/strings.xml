@@ -2,7 +2,7 @@
     <string name="app_name">USTH Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="cloudy">12C\nCloudy</string>
-    <string name="paris">Paris</string>
+    <string name="paris" translatable="false">Paris</string>
     <string name="sat">Sat</string>
     <string name="partly_cloudy">Partly Cloudy\n24C-32C</string>
     <string name="sun">Sun</string>
