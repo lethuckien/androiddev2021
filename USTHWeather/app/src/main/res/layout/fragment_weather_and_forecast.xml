@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="20dp"
-        android:layout_weight="1"></fragment>
+        android:layout_weight="1" />
 
     <fragment
         android:id="@+id/forecast_fragment"
         android:name="vn.edu.usth.usthweather.ForecastFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></fragment>
+        android:layout_weight="1" />
 
 
 </LinearLayout>

@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">USTH Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cloudy">12C\nCloudy</string>
+    <string name="paris">Paris</string>
+    <string name="sat">Sat</string>
+    <string name="partly_cloudy">Partly Cloudy\n24C-32C</string>
+    <string name="sun">Sun</string>
+    <string name="thunderstorms">Thunderstorms\n25C-28C</string>
+    <string name="thu">Thu</string>
+    <string name="tue">Tue</string>
+    <string name="showers">Showers\n24C-26C</string>
+    <string name="wed">Wed</string>
+    <string name="scattered_thunderstorms">Scattered Thunderstorms\n23C-27C</string>
 </resources>

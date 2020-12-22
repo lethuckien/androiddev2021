@@ -9,17 +9,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="12C\n\Cloudy"
+        android:text="@string/cloudy"
         android:textSize="20sp"
-        android:layout_alignParentLeft="true">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
     </TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Paris"
+        android:text="@string/paris"
         android:textSize="20sp"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
     </TextView>
 
     <ImageView

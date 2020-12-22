@@ -25,7 +25,7 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="Sat"
+                android:text="@string/sat"
                 android:textSize="25sp" />
 
             <ImageView
@@ -33,7 +33,6 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="0.5"
-                android:contentDescription="cloudy"
                 android:src="@drawable/cloud" />
 
             <TextView
@@ -42,8 +41,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1.5"
                 android:padding="5dp"
-                android:gravity="left"
-                android:text="Partly Cloudy\n24C-32C"
+                android:gravity="start"
+                android:text="@string/partly_cloudy"
                 android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
@@ -58,7 +57,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="Sun"
+                android:text="@string/sun"
                 android:textAlignment="center"
                 android:textSize="25sp" />
 
@@ -67,7 +66,6 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="0.5"
-                android:contentDescription="cloudy"
                 android:src="@drawable/cloud" />
 
             <TextView
@@ -76,8 +74,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1.5"
                 android:padding="5dp"
-                android:gravity="left"
-                android:text="Thunderstorms\n25C-28C"
+                android:gravity="start"
+                android:text="@string/thunderstorms"
                 android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
@@ -93,7 +91,7 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="Thursday"
+                android:text="@string/thu"
                 android:textSize="25sp" />
 
             <ImageView
@@ -101,7 +99,6 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="0.5"
-                android:contentDescription="cloudy"
                 android:src="@drawable/cloud" />
 
             <TextView
@@ -110,8 +107,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1.5"
                 android:padding="5dp"
-                android:gravity="left"
-                android:text="Partly Cloudy\n24C-32C"
+                android:gravity="start"
+                android:text="@string/partly_cloudy"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -128,7 +125,7 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="Tue"
+                android:text="@string/tue"
                 android:textSize="25sp" />
 
             <ImageView
@@ -136,7 +133,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="0.5"
-                android:contentDescription="cloudy"
+                android:contentDescription="@string/cloudy"
                 android:src="@drawable/cloud" />
 
             <TextView
@@ -145,8 +142,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1.5"
                 android:padding="5dp"
-                android:gravity="left"
-                android:text="Showers\n24C-26C"
+                android:gravity="start"
+                android:text="@string/showers"
                 android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
@@ -162,7 +159,7 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="Wed"
+                android:text="@string/wed"
                 android:textSize="25sp" />
 
             <ImageView
@@ -170,7 +167,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="0.5"
-                android:contentDescription="cloudy"
+                android:contentDescription="@string/cloudy"
                 android:src="@drawable/cloud" />
 
             <TextView
@@ -179,8 +176,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1.5"
                 android:padding="5dp"
-                android:gravity="left"
-                android:text="Scattered Thunderstorms\n23C-27C"
+                android:gravity="start"
+                android:text="@string/scattered_thunderstorms"
                 android:textSize="15sp" />
         </LinearLayout>
 
