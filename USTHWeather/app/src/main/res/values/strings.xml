@@ -12,4 +12,7 @@
     <string name="showers">Showers\n24C-26C</string>
     <string name="wed">Wed</string>
     <string name="scattered_thunderstorms">Scattered Thunderstorms\n23C-27C</string>
+    <string name="search">Search</string>
+    <string name="refresh">Refresh</string>
+    <string name="settings">Settings</string>
 </resources>
