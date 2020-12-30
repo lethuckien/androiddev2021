@@ -1,25 +1,22 @@
 package vn.edu.usth.usthweather;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+
+import java.net.URL;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -37,6 +34,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         MediaPlayer ring = MediaPlayer.create(WeatherActivity.this, R.raw.loud_thoughts);
         ring.start();
+
         Log.i("WeatherActivity", "Create");
 
     }
@@ -78,30 +76,24 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_refresh: {
-                final Handler handler = new Handler(Looper.getMainLooper()) {
+                AsyncTask<URL, Integer, Bundle> task = new AsyncTask<URL, Integer, Bundle>() {
+
+
                     @Override
-                    public void handleMessage(Message msg) {
-                        String content = msg.getData().getString("server_response");
-                        Toast.makeText(getApplicationContext(), content, Toast.LENGTH_LONG).show();
+                    protected Bundle doInBackground(URL... urls) {
+                        SystemClock.sleep(2000);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("server_response", "some json here");
+                        return bundle;
+                    }
+
+                    @Override
+                    protected void onPostExecute(Bundle bundle) {
+                        String context = bundle.toString();
+                        Toast.makeText(WeatherActivity.this, context , Toast.LENGTH_SHORT).show();
                     }
                 };
-
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(5000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        Bundle bundle = new Bundle();
-                        bundle.putString("server_response", "some sample json here");
-                        Message msg = new Message();
-                        msg.setData(bundle);
-                        handler.sendMessage(msg);
-                    }
-                });
-                t.start();
+                task.execute();
                 return true;
             }
             case (R.id.action_settings):{
