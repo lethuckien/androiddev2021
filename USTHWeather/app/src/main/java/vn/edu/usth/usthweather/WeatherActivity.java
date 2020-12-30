@@ -11,6 +11,9 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,6 +38,7 @@ public class WeatherActivity extends AppCompatActivity {
         MediaPlayer ring = MediaPlayer.create(WeatherActivity.this, R.raw.loud_thoughts);
         ring.start();
         Log.i("WeatherActivity", "Create");
+
     }
 
     protected void onStart() {
@@ -67,13 +71,39 @@ public class WeatherActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.weather, menu);
         return true;
     }
+
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_refresh:
-                Toast toast = Toast.makeText(getApplicationContext(), "Refreshed", Toast.LENGTH_LONG);
-                toast.show();
+            case R.id.action_refresh: {
+                final Handler handler = new Handler(Looper.getMainLooper()) {
+                    @Override
+                    public void handleMessage(Message msg) {
+                        String content = msg.getData().getString("server_response");
+                        Toast.makeText(getApplicationContext(), content, Toast.LENGTH_LONG).show();
+                    }
+                };
+
+                Thread t = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        Bundle bundle = new Bundle();
+                        bundle.putString("server_response", "some sample json here");
+                        Message msg = new Message();
+                        msg.setData(bundle);
+                        handler.sendMessage(msg);
+                    }
+                });
+                t.start();
                 return true;
+            }
             case (R.id.action_settings):{
                 Intent intent = new Intent(this, PrefActivity.class);
                 startActivity(intent);
