@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,8 +25,8 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="@string/sat"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:id="@+id/day0"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -42,8 +42,8 @@
                 android:layout_weight="1.5"
                 android:padding="5dp"
                 android:gravity="start"
-                android:text="@string/partly_cloudy"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/day0_descrip"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,9 +57,9 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="@string/sun"
                 android:textAlignment="center"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:id="@+id/day1"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -75,8 +75,8 @@
                 android:layout_weight="1.5"
                 android:padding="5dp"
                 android:gravity="start"
-                android:text="@string/thunderstorms"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/day1_descrip"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,8 +91,8 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="@string/thu"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:id="@+id/day2"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -108,8 +108,8 @@
                 android:layout_weight="1.5"
                 android:padding="5dp"
                 android:gravity="start"
-                android:text="@string/partly_cloudy"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/day2_descrip"/>
         </LinearLayout>
 
         <LinearLayout
@@ -125,8 +125,8 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="@string/tue"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:id="@+id/day3"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -143,8 +143,8 @@
                 android:layout_weight="1.5"
                 android:padding="5dp"
                 android:gravity="start"
-                android:text="@string/showers"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/day3_descrip"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -159,8 +159,8 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="@string/wed"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:id="@+id/day4"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -177,9 +177,9 @@
                 android:layout_weight="1.5"
                 android:padding="5dp"
                 android:gravity="start"
-                android:text="@string/scattered_thunderstorms"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/day4_descrip"/>
         </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+</ScrollView>
