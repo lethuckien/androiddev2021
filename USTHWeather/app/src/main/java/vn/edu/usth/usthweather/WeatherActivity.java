@@ -5,6 +5,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,13 +14,22 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 
 public class WeatherActivity extends AppCompatActivity {
+
+    public WeatherActivity() throws Exception {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,33 +81,45 @@ public class WeatherActivity extends AppCompatActivity {
         return true;
     }
 
-
+    URL url = new URL("https://usth.edu.vn/uploads/logo_moi-eng.png");
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_refresh: {
-                AsyncTask<URL, Integer, Bundle> task = new AsyncTask<URL, Integer, Bundle>() {
-
-
+                AsyncTask<URL, Integer, Bitmap> task;
+                task = new AsyncTask<URL, Integer, Bitmap>() {
+                    Bitmap bitmap = null;
                     @Override
-                    protected Bundle doInBackground(URL... urls) {
-                        SystemClock.sleep(2000);
-                        Bundle bundle = new Bundle();
-                        bundle.putString("server_response", "some json here");
-                        return bundle;
+                    protected Bitmap doInBackground(URL... urls) {
+                        HttpURLConnection connection = null;
+                        try {
+                            connection = (HttpURLConnection) url.openConnection();
+                            connection.setRequestMethod("GET");
+                            connection.setDoInput(true);
+                            connection.connect();
+                            int response = 0;
+                            response = connection.getResponseCode();
+                            Log.i("USTHWeather", "The response is: " + response);
+                            InputStream is = connection.getInputStream();
+                            bitmap = BitmapFactory.decodeStream(is);
+                        } catch (Exception e) {
+                            Log.i("Logo loader", String.valueOf(e));
+                        }
+                        connection.disconnect();
+                        return bitmap;
                     }
 
                     @Override
-                    protected void onPostExecute(Bundle bundle) {
-                        String context = bundle.toString();
-                        Toast.makeText(WeatherActivity.this, context , Toast.LENGTH_SHORT).show();
+                    protected void onPostExecute(Bitmap bitmap) {
+                        ImageView logo = (ImageView) findViewById(R.id.logo);
+                        logo.setImageBitmap(bitmap);
                     }
                 };
-                task.execute();
+                task.execute(url);
                 return true;
             }
-            case (R.id.action_settings):{
+            case (R.id.action_settings): {
                 Intent intent = new Intent(this, PrefActivity.class);
                 startActivity(intent);
                 return true;
