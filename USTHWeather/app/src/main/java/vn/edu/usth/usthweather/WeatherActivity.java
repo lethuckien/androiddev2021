@@ -17,6 +17,12 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
@@ -83,40 +89,37 @@ public class WeatherActivity extends AppCompatActivity {
 
     URL url = new URL("https://usth.edu.vn/uploads/logo_moi-eng.png");
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_refresh: {
-                AsyncTask<URL, Integer, Bitmap> task;
-                task = new AsyncTask<URL, Integer, Bitmap>() {
-                    Bitmap bitmap = null;
+                AsyncTask<Void, Void, Void> task;
+                task = new AsyncTask<Void, Void, Void>() {
                     @Override
-                    protected Bitmap doInBackground(URL... urls) {
-                        HttpURLConnection connection = null;
-                        try {
-                            connection = (HttpURLConnection) url.openConnection();
-                            connection.setRequestMethod("GET");
-                            connection.setDoInput(true);
-                            connection.connect();
-                            int response = 0;
-                            response = connection.getResponseCode();
-                            Log.i("USTHWeather", "The response is: " + response);
-                            InputStream is = connection.getInputStream();
-                            bitmap = BitmapFactory.decodeStream(is);
-                        } catch (Exception e) {
-                            Log.i("Logo loader", String.valueOf(e));
-                        }
-                        connection.disconnect();
-                        return bitmap;
+                    protected Void doInBackground(Void... voids) {
+                        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                        Response.Listener<Bitmap> listener = new Response.Listener<Bitmap>() {
+                            @Override
+                            public void onResponse(Bitmap response) {
+                                ImageView iv = (ImageView) findViewById(R.id.logo);
+                                iv.setImageBitmap(response);
+                            }
+                        };
+                        Response.ErrorListener error = new Response.ErrorListener(){
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.i("image loader", error.toString());
+                            }
+                        };
+                        ImageRequest imageRequest = new ImageRequest("https://usth.edu.vn/uploads/logo_moi-eng.png", listener, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, error);
+                        queue.add(imageRequest);
+                        Log.i("Image loader","added");
+                        return null;
                     }
 
-                    @Override
-                    protected void onPostExecute(Bitmap bitmap) {
-                        ImageView logo = (ImageView) findViewById(R.id.logo);
-                        logo.setImageBitmap(bitmap);
-                    }
                 };
-                task.execute(url);
+                task.execute();
                 return true;
             }
             case (R.id.action_settings): {
